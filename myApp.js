@@ -8,7 +8,11 @@ let abspath = __dirname + "/views/index.html";
 app.get("/", function(req, res) {
   res.sendFile(abspath);
 });
-
+app.get("/json", function(req,res){
+    res.json({
+        message: "Hello json"
+    });
+});
 
 
 // Assets at the /public route
