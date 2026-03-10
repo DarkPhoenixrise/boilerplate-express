@@ -8,9 +8,6 @@ let abspath = __dirname + "/views/index.html";
 
 app.use(function(req,res,next){
     let string=req.method+" "+req.path+" - "+req.ip;
-    res.send({
-        "string": string
-    });
     next();
 });
 app.get("/now",function(req,res,next){
@@ -19,7 +16,8 @@ app.get("/now",function(req,res,next){
 },
 function(req,res){
     res.send({
-        "time":req.time
+        "time":req.time,
+        "string": string
     });
 }
 );
