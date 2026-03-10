@@ -6,7 +6,7 @@ console.log("Hello World");
 
 let abspath = __dirname + "/views/index.html";
 
-app.use(function(req,rest,next){
+app.use(function(req,res,next){
     let string=req.method+" "+req.path+" - "+req.ip;
     console.log(string);
     next();
