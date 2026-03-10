@@ -6,6 +6,11 @@ console.log("Hello World");
 
 let abspath = __dirname + "/views/index.html";
 
+app.use(function(req,rest,next){
+    let string=req.method+" "+req.path+" - "+req.ip;
+    console.log(string);
+    next();
+});
 app.get("/", function(req, res) {
   res.sendFile(abspath);
 });
