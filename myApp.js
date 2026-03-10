@@ -1,11 +1,12 @@
 require('dotenv').config();
+let bodyParser=require('body-parser');
 let express = require('express');
 let app = express();
-
 console.log("Hello World");
-
 let abspath = __dirname + "/views/index.html";
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(function(req,res,next){
     req.string=req.method+" "+req.path+" - "+req.ip;
     next();
