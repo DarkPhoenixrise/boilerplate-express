@@ -21,6 +21,11 @@ function(req,res){
     });
 }
 );
+app.get("/:word/echo",function(req,res){
+    res.send({
+        "echo": req.params.word
+    });
+});
 app.get("/", function(req, res) {
   res.sendFile(abspath);
 });
