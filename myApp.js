@@ -11,6 +11,9 @@ app.use(function(req,res,next){
     req.string=req.method+" "+req.path+" - "+req.ip;
     next();
 });
+app.post("/name",function(req,res){
+    res.json({"name":req.body.first+" "+req.body.last});
+});
 app.get("/now",function(req,res,next){
     req.time=new Date().toString();
     next();
